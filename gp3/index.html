@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Loading...</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      img{
+        display: block;
+        margin: 10% auto;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+      }
+    </style>
+    <script>
+      // Check every 500ms if the searcher is initialized
+      function checkInitialized() {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', 'search', true);
+          xhr.onload = function() {
+              if (xhr.status === 200) {
+                  window.location.href = "search";
+              } else {
+                  setTimeout(checkInitialized, 500);
+              }
+          };
+          xhr.send();
+      }
+      checkInitialized();
+  </script>
+  </head>
+  <body>
+    <!-- Optional: Add a simple message or image here -->
+    <div>
+      <img src="images/title2.gif" alt="logo" />
+      <h2>
+        Search engine is loading. It should take less than 2 minutes.
+      </h2>
+      <h3>
+        Try refresh if it takes too long to respond.
+      </h3>
+    </div>
+  </body>
+</html>

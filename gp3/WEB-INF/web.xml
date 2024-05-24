@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         metadata-complete="false"
+         version="5.0">
+
+  <!-- Servlet definition -->
+  <servlet>
+    <servlet-name>SearchServlet</servlet-name>
+    <servlet-class>searchEngine.SearchServlet</servlet-class>
+<!--    <load-on-startup>1</load-on-startup>-->
+  </servlet>
+
+  <!-- Servlet mapping -->
+  <servlet-mapping>
+    <servlet-name>SearchServlet</servlet-name>
+    <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+
+  <!-- Welcome file -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+  <!-- MIME mappings -->
+  <mime-mapping>
+    <extension>html</extension>
+    <mime-type>text/html</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>css</extension>
+    <mime-type>text/css</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>js</extension>
+    <mime-type>application/javascript</mime-type>
+  </mime-mapping>
+
+</web-app>
